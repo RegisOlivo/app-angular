@@ -1,0 +1,18 @@
+html, .main{
+    height: 100% !important;
+  }
+  
+  #page-content {
+    flex: 1 0 auto;
+  }
+  
+  #sticky-footer {
+    flex-shrink: none;
+  }
+  
+  /* Other Classes for Page Styling */
+  
+  .main {
+    background: #058d2e;
+    background: linear-gradient(to right, rgb(23, 126, 74), #33AEFF);
+  }

@@ -1,0 +1,26 @@
+.main{
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+/* Other Classes for Page Styling */
+
+.main {
+  background: #0000CD;
+  background: linear-gradient(to right, #0000CD, #0000CD);
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

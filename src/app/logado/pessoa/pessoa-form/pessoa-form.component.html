@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <span style="margin: 0 15px;">Registration</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form">
+       <mat-form-field class="full-width">
+              <mat-label>Nome Completo</mat-label>
+              <input  matInput placeholder="Nome do Evento"  name="nomeevento"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Celular</mat-label>
+              <input  matInput placeholder="Local do Evento" name="localevento"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>E-mail</mat-label>
+              <input  matInput placeholder="Palestrante" name="palestrante"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Data Nascimento</mat-label>
+              <input  matInput  placeholder="Data" name="data" required>
+           </mat-form-field>
+    </form>
+  </mat-card-content>
+
+   <mat-card-actions>
+     <button mat-raised-button class="btn btn-primary">REGISTRAR</button>
+   </mat-card-actions>
+</mat-card>

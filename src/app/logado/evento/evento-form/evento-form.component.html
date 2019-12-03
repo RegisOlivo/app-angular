@@ -1,0 +1,108 @@
+<mat-toolbar>
+  <span style="margin: 0 15px;">Registration</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form">
+       <mat-form-field class="full-width">
+              <mat-label>Nome do Evento</mat-label>
+              <input  matInput placeholder="Nome do Evento"  name="nomeevento"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Local do Evento</mat-label>
+              <input  matInput placeholder="Local do Evento" name="localevento"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Palestrante</mat-label>
+              <input  matInput placeholder="Palestrante" name="palestrante"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Data</mat-label>
+              <input  matInput  placeholder="Data" name="data" required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Horario de Inicio</mat-label>
+              <input  matInput  placeholder="Horario Inicio"  name="horarioinicio" required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+            <mat-label>Horario de Termino</mat-label>
+              <input  matInput  placeholder="Horario Termino"  name="horariotermino" required>
+           </mat-form-field>
+           <mat-toolbar>
+              <a mat-button [routerLink]="['/logado','evento','form']" routerLinkActive="router-link-active" class="btn btn-primary"> Adicionar Atividade </a>
+           </mat-toolbar>
+           <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+              <ng-container matColumnDef="edicao">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element">
+                      <button mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+                  </td>
+              </ng-container>
+              <ng-container matColumnDef="excluir">
+                  <th mat-header-cell *matHeaderCellDef></th>
+                  <td mat-cell *matCellDef="let element">
+                      <button mat-mini-fab color="warn"><mat-icon>remove_shopping_cart</mat-icon></button>
+                  </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <br>
+            <mat-toolbar>
+                <a mat-button [routerLink]="['/logado','evento','form']" routerLinkActive="router-link-active" class="btn btn-primary"> Adicionar Pacote </a>
+             </mat-toolbar>
+             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+                  <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                </ng-container>
+                <ng-container matColumnDef="symbol">
+                  <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                  <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+                <ng-container matColumnDef="edicao">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="excluir">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-mini-fab color="warn"><mat-icon>remove_shopping_cart</mat-icon></button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card-actions>
+    <button mat-raised-button class="btn btn-primary">REGISTRAR</button>
+</mat-card-actions>

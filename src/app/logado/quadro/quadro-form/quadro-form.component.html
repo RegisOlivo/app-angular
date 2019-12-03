@@ -1,0 +1,40 @@
+<app-spinner [valorInicial]="14" (mudou)="mudouValorSpinner($event)"></app-spinner>
+
+<p>quadro-form works!</p>
+<div>
+    <img src="{{ url }}" />
+    <img [src]="url" />
+    <img bind-src="url" />
+</div>
+
+<div>
+    <button (click)="cliqueBotao()">Testar</button>
+
+    <input type="text" (keyup)="digitou($event)" (keyup.enter)="salvarConteudo($event.target.value)" (blur)="salvarConteudo($event.target.value)" />
+    <br/> Conteudo atual: {{ conteudoAtual }}
+    <br/> Conteudo salvo: {{ conteudoSalvo }}
+</div>
+
+<div>
+    <span (mouseover)="passou()" (mouseout)="passou()" [class.colorido]="sobreSpan">Passe o mouse sobre mim</span>
+</div>
+
+<div>
+    <br/>Sem Two-way<input type="text" [value]="nome">
+    <br/>Com Two-way
+    <input type="text" [value]="nome"(input)="nome = $event.target.value" />
+    <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+    <input type="text" [(ngModel)]="nome" />
+    <br/>{{nome}}
+</div>
+
+<div>
+    <select #cores (change)=0>
+        <option value="success">Sucesso</option>
+        <option value="danger">Erro</option>
+    </select>
+
+    <div class="alert alert-{{ cores.value }}">
+        qualquer coisa
+    </div>
+</div>

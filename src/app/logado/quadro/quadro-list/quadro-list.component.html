@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="mt-5">Quadro</h1>
+    <p class="lead">Todos os quadros</p>
+   
+    <div class="card mt-4" *ngFor="let quadro of quadros">
+      <div class="card-header">
+        {{ quadro.nome}} <span class="small text-muted">({{quadro.proprietario.nome}})</span>
+      </div>
+      <div class="card-body">
+        <p class="card-text" *ngFor="let post of quadro.postagens">
+          {{ post.texto}}
+        </p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<p>instituicao-edit works!</p>
+
+<mat-card class="my-card">
+    <mat-card-content>
+      <form class="my-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+             <mat-form-field class="full-width">
+                <mat-label>Nome da Instituição</mat-label>
+                <input  matInput placeholder="Nome do Evento" formControlName="nomeFantasia" id="nomeFantasia" value="{{instituicao.nomeFantasia}}" required>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Cidade</mat-label>
+                <input  matInput placeholder="Local do Evento" formControlName="cnpj" id="cnpj" value="{{instituicao.cnpj}}" required>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Estado</mat-label>
+                <input  matInput placeholder="Campus" formControlName="campus" id="campus" value="{{instituicao.campus}}" required>
+             </mat-form-field>
+             <mat-card-actions>
+              <button mat-raised-button type="submit" class="btn btn-primary">Confirmar</button>
+            </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>

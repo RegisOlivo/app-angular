@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" [routerLink]="['/logado']" routerLinkActive="router-link-active" >QuadroAPP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/logado','quadro']" routerLinkActive="router-link-active" >Quadro</a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+        </div>
+    </div>
+</nav>
