@@ -28,7 +28,7 @@ import { PessoaService } from '../pessoa.service';
   styleUrls: ['./pessoa-list.component.css']
 })
 export class PessoaListComponent implements OnInit {
-  displayedColumns: string[] = ['nome', 'sobrenome', 'email'];
+  displayedColumns: string[] = ['nome', 'sobrenome', 'email', 'editar_excluir'];
   //dataSource = ELEMENT_DATA;
 
   listaPessoa: any[];
@@ -49,6 +49,14 @@ export class PessoaListComponent implements OnInit {
       }
     );
 
+  }
+
+  onDelete(id: String) {
+    console.log(id);
+    this.pessoaService.deletar(id).subscribe(() => {
+      alert(' Deletado com Sucesso! ');
+      this.listarPessoa();
+    });
   }
 
 }

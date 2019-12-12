@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { PessoaService } from './pessoa.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -25,7 +27,10 @@ import { PessoaService } from './pessoa.service';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatIconModule
   ],
   exports: [PessoaListComponent, PessoaFormComponent],
   providers: [PessoaService]

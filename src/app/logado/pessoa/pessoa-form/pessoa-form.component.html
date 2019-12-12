@@ -1,29 +1,38 @@
 <mat-toolbar>
   <span style="margin: 0 15px;">Registration</span>
 </mat-toolbar>
+
 <mat-card class="my-card">
   <mat-card-content>
-    <form class="my-form">
-       <mat-form-field class="full-width">
-              <mat-label>Nome Completo</mat-label>
-              <input  matInput placeholder="Nome do Evento"  name="nomeevento"  required>
+    <form class="my-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+           <mat-form-field class="full-width">
+              <mat-label>Nome</mat-label>
+              <input  matInput placeholder="Nome" formControlName="nome" id="nome" required>
            </mat-form-field>
            <mat-form-field class="full-width">
-              <mat-label>Celular</mat-label>
-              <input  matInput placeholder="Local do Evento" name="localevento"  required>
+              <mat-label>Sobrenome</mat-label>
+              <input  matInput placeholder="Sobrenome" formControlName="sobrenome" id="sobrenome"  required>
            </mat-form-field>
            <mat-form-field class="full-width">
-              <mat-label>E-mail</mat-label>
-              <input  matInput placeholder="Palestrante" name="palestrante"  required>
+              <mat-label>Email</mat-label>
+              <input  matInput placeholder="Email" formControlName="email" id="email"  required>
            </mat-form-field>
            <mat-form-field class="full-width">
-              <mat-label>Data Nascimento</mat-label>
-              <input  matInput  placeholder="Data" name="data" required>
+            <mat-label>CPF</mat-label>
+            <input  matInput placeholder="CPF" formControlName="cpf" id="cpf"  required>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>login</mat-label>
+              <input  matInput placeholder="Login" formControlName="login" id="login"  required>
            </mat-form-field>
+           <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input  matInput placeholder="Password" formControlName="password" id="password"  required>
+         </mat-form-field>
+           <mat-card-actions>
+            <button mat-raised-button type="submit" class="btn btn-primary">REGISTRAR</button>
+          </mat-card-actions>
     </form>
   </mat-card-content>
-
-   <mat-card-actions>
-     <button mat-raised-button class="btn btn-primary">REGISTRAR</button>
-   </mat-card-actions>
 </mat-card>
+

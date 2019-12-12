@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+    <p>Editar Dados</p>
+      <!--<h1 mat-dialog-title>{{data.nomeFantasia}}</h1>
+      <h1 mat-dialog-title>{{data.cnpj}}</h1>
+      <h1 mat-dialog-title>{{data.campus}}</h1>-->
+      <mat-form-field>
+          <input matInput [(ngModel)]="data.nomeFantasia">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput [(ngModel)]="data.cnpj">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput [(ngModel)]="data.campus">
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+      <button mat-button (click)="onEditar(data.id, data.nomeFantasia, data.cnpj, data.campus)">Editar</button>
+  </div>

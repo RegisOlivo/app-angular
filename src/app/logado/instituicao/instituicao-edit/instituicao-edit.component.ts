@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class InstituicaoEditComponent implements OnInit {
 
   id;
-  public formulario: FormGroup
+  public formulario: FormGroup;
   private sub: any;
   message: string;
   public instituicao: Instituicao;

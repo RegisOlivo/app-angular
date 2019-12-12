@@ -1,0 +1,22 @@
+<div mat-dialog-content>
+  <mat-card class="my-card">
+    <mat-card-content>
+      <form class="my-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" style="margin: 0 15px;">
+          <input  matInput placeholder="Nome da Atividade" formControlName="descricao" id="descricao" required>
+        </mat-form-field>
+        <mat-form-field class="full-width" style="margin: 0 15px;">
+          <input  matInput placeholder="Valor"  type="number" formControlName="valor" id="valor" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput placeholder="Evento" formControlName="evento" id="evento" required>
+        </mat-form-field>
+        <h1 mat-card-subtitle>ID do Evento: {{data.id}}</h1>
+        <mat-card-actions>
+          <button mat-raised-button type="submit" class="btn btn-primary">REGISTRAR</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

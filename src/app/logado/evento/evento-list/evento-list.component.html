@@ -7,30 +7,57 @@
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Position Column -->
+  <!-- Data de Inicio Coluna -->
   <ng-container matColumnDef="dataInicio">
     <th mat-header-cell *matHeaderCellDef> Data de Inicio </th>
-    <td mat-cell *matCellDef="let element"> {{element.dataInicio}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.dataInicio | date: 'dd/MM/yyyy'}} </td>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- Data de Termino Coluna -->
   <ng-container matColumnDef="dataTermino">
     <th mat-header-cell *matHeaderCellDef> Data de Termino </th>
-    <td mat-cell *matCellDef="let element"> {{element.dataTermino}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.dataTermino | date: 'dd/MM/yyyy'}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- Descricao Coluna -->
   <ng-container matColumnDef="descricao">
     <th mat-header-cell *matHeaderCellDef> Descrição </th>
     <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Local Coluna -->
   <ng-container matColumnDef="local">
     <th mat-header-cell *matHeaderCellDef> Local </th>
     <td mat-cell *matCellDef="let element"> {{element.local}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="addatv">
+    <th mat-header-cell *matHeaderCellDef> Add Atividade </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-mini-fab color="accent" (click)="openADD(element._id, element.descricao, element.atividades)"><mat-icon>list</mat-icon></button>
+        </td>
+  </ng-container>
+
+  <ng-container matColumnDef="atividades">
+    <th mat-header-cell *matHeaderCellDef> Lista De Atividades </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-mini-fab color="accent" (click)="openDialog(element._id, element.descricao, element.atividades)"><mat-icon>list</mat-icon></button>
+        </td>
+  </ng-container>
+
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab color="primary" (click)="openEditar(element._id, element.dataInicio, element.dataTermino, element.descricao, element.local, element.atividades)"><mat-icon>edit</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="excluir">
+    <th mat-header-cell *matHeaderCellDef>Excluir</th>
+    <td mat-cell *matCellDef="let element">
+        <button mat-mini-fab color="warn" (click)="onDelete(element._id)"><mat-icon>delete_sweep</mat-icon></button>
+    </td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

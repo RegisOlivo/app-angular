@@ -37,12 +37,12 @@ export class InstituicaoService {
       const url = getDefaultUrl('instituicao');
       return this.httpClient.post( url, body, {headers: cabecalho} ).pipe(catchError(this.handleError));
 
-     }
+    }
 
-     public getById(id: String) {
+    public getById(id: string) {
       const cabecalho: HttpHeaders = this.getHeaders();
-      const url = getDefaultUrl('instituicao/edit/' + id);
-      console.log('url getById: ' + url);
+      const url = getDefaultUrl('instituicao/' + id);
+      console.log('url getById: ' + id);
       this.result = this.httpClient.get<Instituicao>( url, {headers: cabecalho} ).pipe(catchError(this.handleError));
       return this.result;
     }

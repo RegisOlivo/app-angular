@@ -24,10 +24,24 @@ export class PessoaService {
     });
   }
 
+  public cadastrar(nome: string, sobrenome: string, email: string, cpf: string, login: string, password: string) {
+    const body = JSON.stringify( { nome : nome, sobrenome: sobrenome, email: email, cpf: cpf, login: login, password: password } );
+    console.log(body);
+    const cabecalho: HttpHeaders = this.getHeaders();
+    const url = getDefaultUrl('pessoa');
+    return this.httpClient.post( url, body, {headers: cabecalho} ).pipe(catchError(this.handleError));
+   }
+
   public getAll = () : Observable<Pessoa[]> => {
     let cabecalho: HttpHeaders = this.getHeaders();
     let url = getDefaultUrl('pessoa');
     return this.httpClient.get<Pessoa[]>( url, {headers: cabecalho} ).pipe(catchError(this.handleError));
+  }
+
+  public deletar(id: String) {
+    const cabecalho: HttpHeaders = this.getHeaders();
+    const url = getDefaultUrl('pessoa/' + id);
+    return this.httpClient.delete<Pessoa>( url, {headers: cabecalho} ).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

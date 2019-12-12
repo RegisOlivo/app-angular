@@ -1,0 +1,7 @@
+<p>Atividades Previstas</p>
+<h1 mat-dialog-title>{{data.descricao}}</h1>
+<h1 mat-card-subtitle>Atividades logo abaixo:</h1>
+  <li *ngFor="let atividade of data.atividades">{{atividade.descricao}} <button mat-mini-fab color="warn" (click)="onDelete(atividade._id)"><mat-icon>delete_sweep</mat-icon></button></li>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.descricao" cdkFocusInitial>Ok</button>
+</div>
